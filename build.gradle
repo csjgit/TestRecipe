@@ -1,0 +1,50 @@
+plugins {
+   // id("org.springframework.boot") version "3.2.2"
+   // id("io.spring.dependency-management") version "1.1.4"
+    id("java")
+    id("org.openrewrite.rewrite") version("7.1.5")
+}
+
+rewrite {
+
+    //activeRecipe('com.test.HelloToHiRecipe')
+   activeRecipe('com.example.SimpleRecipe')
+
+}
+/*rewriteRun
+        {
+           // activeRecipe("com.example.SimpleJavaRewriteRecipe")
+        }*/
+
+repositories {
+    mavenCentral()
+}
+
+group = "com.example"
+version = "1.0.0"
+java.sourceCompatibility = JavaVersion.VERSION_17
+
+
+dependencies {
+    implementation name: 'rewrite-testing-frameworks-0.1.0-SNAPSHOT'
+}
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'C:\\Users\\MSUSERSL123\\IdeaProjects\\spring-integration-poc\\build\\libs'
+    }
+}
+
+dependencies {
+    implementation name: 'rewrite-testing-frameworks-0.1.0-SNAPSHOT'
+                      // C:\\Users\\MSUSERSL123\\IdeaProjects\\spring-integration-poc\\build\\libs
+    //implementation (files('C:\\Users\\MSUSERSL123\\IdeaProjects\\rewrite-testing-frameworks\\build\\libs\\rewrite-testing-frameworks-3.4.0-SNAPSHOT.jar'))
+   implementation 'org.openrewrite:rewrite-java:8.47.3'  // Core Java support
+
+
+
+
+
+
+}
+
