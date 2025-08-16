@@ -13,7 +13,6 @@ rewrite
 repositories {
     mavenCentral()
 }
-
 group = "com.example"
 version = "1.0.0"
 java.sourceCompatibility = JavaVersion.VERSION_17
@@ -27,13 +26,20 @@ repositories {
 }
 
 dependencies {
+    implementation "org.projectlombok:lombok:1.18.30"
+    annotationProcessor "org.projectlombok:lombok:1.18.30"
+    testImplementation "org.projectlombok:lombok:1.18.30"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.30"
     implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
-    implementation("org.openrewrite:rewrite-java")  // Core Java support
+    implementation("org.openrewrite:rewrite-java")
+    implementation("org.openrewrite:rewrite-core")  // Core Java support
     runtimeOnly("org.openrewrite:rewrite-java-17")
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2") // JUnit 5
     testImplementation("org.openrewrite:rewrite-test")
+    implementation "com.fasterxml.jackson.core:jackson-annotations:2.15.2"
+  rewrite files("${project.buildDir}/classes/java/main", "${project.buildDir}/resources/main")
 
-
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2"
 
 
 
