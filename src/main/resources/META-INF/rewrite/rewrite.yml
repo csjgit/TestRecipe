@@ -1,0 +1,7 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: x
+recipeList:
+  - com.test.ReplaceStringRecipe:
+     targetString: "Hello"
+     replacementString: "Hi"
+     excludedClassSuffix: "Recipe"
